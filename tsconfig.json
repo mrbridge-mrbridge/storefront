@@ -1,0 +1,27 @@
+{
+	"compilerOptions": {
+	  "target": "ES2020",
+      "experimentalDecorators": true,
+      "emitDecoratorMetadata": true,
+	  "sourceMap": true,
+	  "module": "NodeNext",
+	  "moduleResolution": "NodeNext",
+	  "esModuleInterop": true,
+	  "rootDir": "src",
+	  "outDir": "dist",
+	  "allowJs": true,
+	  "checkJs": false,
+	  "resolveJsonModule": true,
+	  "forceConsistentCasingInFileNames": true,
+	},
+	"include": [
+	  "src/**/*"
+	],
+	"exclude": [
+	  "node_modules"
+	],
+	"typeRoots": [
+	  "./src/types",
+	  "./node_modules/@types"
+	],
+}

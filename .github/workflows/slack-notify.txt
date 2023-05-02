@@ -1,0 +1,32 @@
+name: Slack Notification
+
+on:
+    # Trigger analysis when pushing in master or pull requests, and when creating
+    # a pull request.
+    workflow_dispatch:
+    push:
+        branches: [main, staging, testing, develop, feat/*]
+
+    pull_request:
+        types: [opened, synchronize, reopened]
+
+jobs:
+  setup:
+      uses: ./.github/workflows/build.yml
+  slackNotification:
+        needs: setup
+        name: Slack Notification
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v2
+            - name: Slack Notify
+              uses: rtCamp/action-slack-notify@v2.2.0
+              env:
+                  SLACK_CHANNEL: ${{ secrets.SLACK_CHANNEL }}
+                  SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+                  SLACK_TITLE: POST Title
+                  SLACK_MESSAGE: 'Post Content :rocket:'
+                  SLACK_COLOR: '#ff00ff'
+                  SLACK_USERNAME: ${{ secrets.SLACK_USERNAME }} #OPTIONAL
+                  SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+                  SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }} #OPTIONAL

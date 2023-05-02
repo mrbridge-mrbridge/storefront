@@ -1,0 +1,67 @@
+#App port
+PORT=4001
+
+# cloud database
+
+# DB_HOST=adventsaas.ck0dwzfc16xf.eu-west-1.rds.amazonaws.com
+# DB_PORT=5432
+# DB_NAME=storefrontsmes
+# DB_PASSWORD=storefrontsmes
+# DB_USER=storefrontsmes
+# DB_TYPE="postgres"
+
+#Database Configuation (not actual)
+
+DB_HOST=localhost
+DB_PORT=5432
+DB_NAME=postgres
+DB_PASSWORD=pielly16
+DB_USER=postgres
+
+#Jwt credentials
+ACCESS_TOKEN_SECRET=3264097d43dcc4577075ad3053cf5fd9
+REFRESH_TOKEN_SECRET=1cd856ff9b7348e7d148ae83ce87fc91
+TOKEN_EXPIRES_IN="60m"
+
+#hashing password
+SALT=10
+
+#mailer
+HOST=smtp.gmail.com
+USER=storefront.smes@gmail.com
+SERVICE=gmail
+PASS=ugjxecmhctiebcdv
+
+
+# URL
+HOST_BASE_URL=https://storefrontsmes-api.amalitech-dev.net
+BASE_URL=https://storefrontsmes.amalitech-dev.net
+SWAGGER_HOST=localhost:4001
+ACTIVATION_PATH=activation
+RESET_PATH=newpassword
+
+#session secret
+
+SESSION_SECRET=ddkigu988t5u0gw49t5ig0w54jt04i3w5y92gv4w00000000000995
+SESSION_TABLE_NAME=user_session
+
+########   OAuth   ######
+
+#Google
+GoogleClientId=16280777418-c84jrmejrvnkr0t5hlb3ktnuluct5gb6.apps.googleusercontent.com
+GoogleClientSecret=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
+Google_Redirect_Url=https://storefrontsmes-api.amalitech-dev.net/api/auth/google/redirect
+
+#Facebook
+FacebookClientID=518150113847563
+FacebookClientSecret=0521978bb4141ab068ce235c7d622b4c
+Facebook_Redirect_Url=https://storefrontsmes-api.amalitech-dev.net/api/auth/facebook/redirect
+
+
+# start Docker
+# docker-compose -f docker-compose.yml build --no-cache
+
+#docker run
+# docker-compose -f docker-compose.yml up -detached
+
+

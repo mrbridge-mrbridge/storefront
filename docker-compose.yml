@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  storefront-api:
+    image: storefrontsmes-backend
+    env_file: .env
+    container_name: storefrontsmes-backend
+    build :
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - '3005:3001'
+    restart: on-failure
